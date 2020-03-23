@@ -377,6 +377,19 @@
         </main>
       </div>
     </div>
+    <script id="template-author-sidebar-link" type="text/x-handlebars-template">
+      {{#each authors}}
+      <li><a href="#{{ author }}"><span>{{ author }}</span> ({{ count }})</a></li>
+      {{/each}}
+    </script>
+    <script id="template-tag-cloud-link" type="text/x-handlebars-template">
+      {{#each tags}}
+      <li><a class="{{ className }}" href="#tag-{{ tag }}"><span>{{ tag }}</span></a></li>
+      {{/each}}
+    </script>
+    <script id="template-tag-article-link" type="text/x-handlebars-template">
+      <li><a href="#tag-{{ id }}"><span>{{ title }}</span></a></li>
+    </script>
     <script id="template-article-link" type="text/x-handlebars-template">
       <li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
     </script>
