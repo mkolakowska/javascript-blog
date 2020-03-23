@@ -131,7 +131,7 @@ function generateTags() {
     /* START LOOP: for each tag */
     for (let tag of articleTagsArray) {
       /* generate HTML of the link */
-      const linkHTML = `<li><a href="${tag}"><span>${tag}</span></a></li>`;
+      const linkHTML = `<li><a href="#tag-${tag}"><span>${tag}</span></a></li>`;
       /*
       const linkHTMLData = { id: tag, title: tag };
       const linkHTML = templates.articleLink(linkHTMLData);
@@ -164,7 +164,7 @@ function generateTags() {
     allTagsHTML += `<li><a class="${calculateTagClass(
       allTags[tag],
       tagsParams
-    )}" href="${tag}"><span>${tag}</span></a></li>`;
+    )}" href="#tag-${tag}"><span>${tag}</span></a></li>`;
     /* [NEW] END LOOP: for each tag in allTags: */
   }
   /*[NEW] add HTML from allTagsHTML to tagList */
