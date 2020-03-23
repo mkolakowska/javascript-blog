@@ -1,10 +1,28 @@
 'use strict';
+
 /*
-document.getElementById("test-button").addEventListener("click", function() {
-  const links = document.querySelectorAll(".titles a");
-  ("links:", links);
-});
+const opt = {
+  articleSelector: '.post',
+  titleSelector: '.post-title',
+  titleListSelector: 'titles',
+  articleTagsSelector: '.post-tags .list',
+  articleAuthorSelector: '.post-author',
+  tagsListSelector: '.tags .list',
+  cloudClassCount: 5,
+  cloudClassPrefix: 'tag-size-',
+  authorsListSelector: '.authors .list'
+};
 */
+const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles',
+  optArticleTagsSelector = '.post-tags .list',
+  optArticleAuthorSelector = '.post-author',
+  optTagsListSelector = '.tags .list', // ten selector pozwoli nam na odnalezienie listy tagow w prawej kolumnie???
+  optCloudClassCount = 5,
+  optCloudClassPrefix = 'tag-size-',
+  optAuthorsListSelector = '.authors .list';
+
 const titleClickHandler = function(event) {
   event.preventDefault();
   const clickedElement = this;
@@ -30,16 +48,6 @@ const titleClickHandler = function(event) {
   /* add class 'active' to the correct article */
   targetArticle.classList.add('active');
 };
-
-const optArticleSelector = '.post',
-  optTitleSelector = '.post-title',
-  optTitleListSelector = '.titles',
-  optArticleTagsSelector = '.post-tags .list',
-  optArticleAuthorSelector = '.post-author',
-  optTagsListSelector = '.tags .list', // ten selector pozwoli nam na odnalezienie listy tagow w prawej kolumnie???
-  optCloudClassCount = 5,
-  optCloudClassPrefix = 'tag-size-',
-  optAuthorsListSelector = '.authors .list';
 
 function generateTitleLinks(customSelector = '') {
   /* remove contents of titleList */
